@@ -3,6 +3,7 @@ import { commonStyles } from "../styles/common";
 import Title from "../components/Title";
 import BottomMenuBar from "../components/BottomBar";
 import { ScrollView, View } from "react-native";
+import Question from "../components/Question/Question";
 
 const Screens = () => {
   return (
@@ -10,6 +11,7 @@ const Screens = () => {
       <ScrollView>
         <SafeAreaView>
           <Title />
+          <Question />
         </SafeAreaView>
       </ScrollView>
       <BottomMenuBar />

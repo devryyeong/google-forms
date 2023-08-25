@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderTopColor: `${COLORS.PRIMARY_200}`,
     // 터치했을 때
     borderLeftColor: `${COLORS.BLUE}`,
-    borderLeftWidth: 6,
+    borderLeftWidth: 4,
   },
   top: {
     backgroundColor: `${COLORS.PRIMARY_200}`,
@@ -34,11 +34,11 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 8,
   },
   title: {
-    fontSize: 20,
+    fontSize: 32,
     marginBottom: 10,
   },
   description: {
-    fontSize: 10,
+    fontSize: 15,
   },
   leftSide: {},
 });
