@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from 'react'
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import { Ionicons } from "@expo/vector-icons";
 import COLORS from "../styles/color"
 
 interface BottomBarButtonProps {
@@ -19,7 +19,7 @@ const BottomBar = () => {
           style={styles.buttonContainer}
           onPress={handleAddButtonPress}
         >
-          <Text style={styles.buttonText}>+</Text>
+          <Ionicons name="ios-add-circle-outline" size={24} color="#5F6368" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonContainer}>
           <Text style={styles.buttonText}>label 2</Text>
