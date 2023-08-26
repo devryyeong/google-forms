@@ -3,17 +3,19 @@ import React, { useState } from 'react';
 import { HStack, IconButton, Switch } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import COLORS from "../../styles/color";
-
+import { Portal } from "@react-native-material/core";
 
 const QuestionFooter = () => {
   const [checked, setChecked] = useState(false);
   return (
     <View style={styles.container}>
-      <HStack fill center spacing={4} style={styles.stack}>
-      <Text style={styles.requiredText}>필수</Text>
+      <HStack center spacing={4} style={styles.stack}>
+        <Text>필수</Text>
         <Switch value={checked} onValueChange={() => setChecked(!checked)} />
         <IconButton
-          icon={(props) => <Icon name="dots-vertical" {...props} />}
+          icon={(props) => (
+            <Icon name="dots-vertical" {...props} color="#5F6368" />
+          )}
         />
       </HStack>
     </View>
@@ -27,11 +29,9 @@ const styles = StyleSheet.create({
     borderTopColor: `${COLORS.GRAY_100}`,
     borderTopWidth: 1,
     paddingTop: 8,
+    marginTop: 25,
   },
   stack: {
     justifyContent: "flex-end",
   },
-  requiredText: {
-    color: `${COLORS.GRAY_200}`
-  }
 });

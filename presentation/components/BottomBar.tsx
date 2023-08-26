@@ -16,13 +16,9 @@ const BottomBar = () => {
     <View style={styles.container}>
       <View style={styles.contentWrapper}>
         <TouchableOpacity
-          style={styles.buttonContainer}
           onPress={handleAddButtonPress}
         >
           <Ionicons name="ios-add-circle-outline" size={24} color="#5F6368" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>label 2</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -47,13 +43,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     paddingVertical: 12,
-  },
-  buttonText: {
-    color: `${COLORS.GRAY_200}`,
-    fontSize: 16,
-  },
-  buttonContainer: {
-    //
   },
 });
 

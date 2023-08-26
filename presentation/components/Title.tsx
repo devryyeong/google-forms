@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
     paddingVertical: 15,
+    marginTop: 10,
     backgroundColor: `${COLORS.WHITE}`,
     borderRadius: 8,
     borderStyle: "solid",
