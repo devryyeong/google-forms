@@ -1,21 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Title } from "../type/title";
 
-export interface TitleProps {
-  title?: string;
-  description?: string;
-  editMode?: boolean;
-}
-
-const initialState: TitleProps = {
-  title: '제목없는 설문지히히',
-  description: '히히 설명',
+const initialState: Title = {
+  title: "제목없는 설문지",
+  description: "설문지 설명",
 };
 
 const userInfoSlice = createSlice({
-  name: 'title',
+  name: "title",
   initialState,
   reducers: {
-    UPDATE: (state: TitleProps, action: PayloadAction<TitleProps>): TitleProps => {
+    UPDATE: (state: Title, action: PayloadAction<Title>): Title => {
       return { ...state, ...action.payload };
     },
   },

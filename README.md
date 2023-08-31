@@ -1,20 +1,17 @@
-# React-Native Boilerplate
+# Google Forms Clone
 
 ## 🔨 기술 스택
 - Typescript
 - React-Native
 - Expo
+- Redux
 
 <br>
 
 ## 🔧 설치 및 실행
 
-### 깃 클론 및 설치 경로 이동
+### local PC에서 파일 다운로드
 
-```
-$ git clone https://github.com/devryyeong/react-native-boilerplate.git
-$ cd react-native-boilerplate
-```
 
 ### 설치
 

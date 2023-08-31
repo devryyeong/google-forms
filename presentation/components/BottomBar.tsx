@@ -1,24 +1,53 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import React from 'react'
+import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons"; 
 import COLORS from "../styles/color"
-
-interface BottomBarButtonProps {
-  onPress: () => void;
-}
+import { useNavigation } from "@react-navigation/native";
+import { ADD } from "../reducer/QuestionReducer";
+import { RootState } from "../store";
+import { Question, Questions } from "../type/question";
 
 const BottomBar = () => {
-  const handleAddButtonPress = (label: string) => {
-    console.log(`질문 추가`);
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+  const nowQuestion = useSelector(
+    (state: RootState) => state.nowQuestion,
+  ) as Question;
+
+  const questions = useSelector(
+    (state: RootState) => state.question,
+  ) as Questions;
+
+  const addHandler = () => {
+    dispatch(
+      ADD({
+        ...nowQuestion,
+        id: questions.length + 1,
+        type: "객관식 질문",
+        title: "",
+      })
+    );
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.contentWrapper}>
+        <TouchableOpacity>
+          <Ionicons
+            name="ios-add-circle-outline"
+            size={24}
+            color={COLORS.GRAY_300}
+            onPress={addHandler}
+          />
+        </TouchableOpacity>
         <TouchableOpacity
-          onPress={handleAddButtonPress}
+          onPress={() => {
+            navigation.navigate("Preview");
+          }}
         >
-          <Ionicons name="ios-add-circle-outline" size={24} color="#5F6368" />
+          <MaterialIcons name="preview" size={24} color={COLORS.GRAY_300} />
         </TouchableOpacity>
       </View>
     </View>
@@ -32,7 +61,7 @@ const styles = StyleSheet.create({
     flex: 0.1,
     left: 0,
     right: 0,
-    bottom: -10,
+    bottom: -5,
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
     marginHorizontal: 15,
@@ -42,7 +71,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    paddingVertical: 12,
+    paddingVertical: 10,
   },
 });
 
