@@ -8,7 +8,6 @@ import {
   TextInputChangeEventData,
   Pressable,
 } from "react-native";
-import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { UPDATEQUESTION } from "../../reducer/NowQuestionReducer";
 import { ADD, EDIT } from "../../reducer/QuestionReducer";

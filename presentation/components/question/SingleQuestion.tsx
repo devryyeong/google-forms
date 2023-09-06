@@ -38,8 +38,6 @@ const SingleQuestion = () => {
 
   const { showActionSheetWithOptions } = useActionSheet();
 
-  const [selectedIndex, setSelectedIndex] = useState<number>(0);
-
   const [type, setType] = useState<string>("단답형");
   const [checked, setChecked] = useState<boolean>(false);
 
