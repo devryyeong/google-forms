@@ -37,15 +37,18 @@ const MultipleQuestions = () => {
 
   const { showActionSheetWithOptions } = useActionSheet();
 
-  const [checked, setChecked] = useState<boolean>(false);
-
-  const checkHandler = () => {
-    setChecked(!checked);
-    dispatch(
-      UPDATEQUESTION({
-        isNecessary: checked,
-      })
-    );
+  const checkHandler = (e: any, questionId: number) => {
+    const updatedQuestions = questions.map((question) => {
+      if (question.id === questionId) {
+        return {
+          ...question,
+          isNecessary: e,
+        };
+      }
+      return question;
+    });
+    dispatch(EDIT(updatedQuestions));
+    console.log("questionId: ", questionId);
   };
 
   // 등록된 질문 옵션메뉴 수정 핸들러
@@ -426,7 +429,10 @@ const MultipleQuestions = () => {
             <View style={styles.footerContainer}>
               <HStack center spacing={4} style={styles.stack}>
                 <Text>필수</Text>
-                <Switch value={checked} onValueChange={checkHandler} />
+                <Switch
+                  value={question.isNecessary}
+                  onValueChange={(e) => checkHandler(e, question.id!)}
+                />
                 <Pressable onPress={() => copyQuestionHandler(question.id!)}>
                   <Text>복사</Text>
                 </Pressable>

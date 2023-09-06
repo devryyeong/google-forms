@@ -34,7 +34,7 @@ const persistConfig = {
   key: "root",
   storage: AsyncStorage,
   whitelist: ["question", "title", "nowQuestion"],
-  transforms: [JSOGTransform],
+  // transforms: [JSOGTransform],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
@@ -50,7 +50,9 @@ const store: Store<RootState> = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       immutableCheck: false,
-      serializableCheck: false,
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
     }),
 });
 
