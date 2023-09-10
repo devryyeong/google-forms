@@ -3,7 +3,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { commonStyles } from "../styles/common";
 import Title from "../components/question/QuestionTitle";
-import SingleQuestion from "../components/question/SingleQuestion";
 import MultipleQuestions from "../components/question/MultipleQuestions";
 
 const Main = ({}) => {

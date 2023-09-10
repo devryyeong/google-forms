@@ -10,11 +10,6 @@ import {
 } from "react-native";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import COLORS from "../../styles/color";
-import { Feather } from "@expo/vector-icons";
-import { useActionSheet } from "@expo/react-native-action-sheet";
-import { HStack, IconButton, Switch } from "@react-native-material/core";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
 import { UPDATEQUESTION } from "../../reducer/NowQuestionReducer";
 import { ADD, EDIT } from "../../reducer/QuestionReducer";
@@ -25,6 +20,12 @@ import ShortAnswer from "../answer/ShortAnswer";
 import LongAnswer from "../answer/LongAnswer";
 import CheckboxAnswer from "../answer/CheckboxAnswer";
 import SingleChoiceAnswer from "../answer/SingleChoiceAnswer";
+
+import COLORS from "../../styles/color";
+import { Feather } from "@expo/vector-icons";
+import { useActionSheet } from "@expo/react-native-action-sheet";
+import { HStack, IconButton, Switch } from "@react-native-material/core";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
 const SingleQuestion = () => {
   const dispatch = useDispatch();

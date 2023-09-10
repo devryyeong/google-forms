@@ -13,11 +13,13 @@ import { UPDATEQUESTION } from "../../reducer/NowQuestionReducer";
 import { ADD, EDIT } from "../../reducer/QuestionReducer";
 import { RootState } from "../../store";
 import { Question, Questions } from "../../type/question";
+
+import { useActionSheet } from "@expo/react-native-action-sheet";
 import ShortAnswer from "../answer/ShortAnswer";
 import LongAnswer from "../answer/LongAnswer";
+
 import COLORS from "../../styles/color";
 import { Feather } from "@expo/vector-icons";
-import { useActionSheet } from "@expo/react-native-action-sheet";
 import { HStack, IconButton, Switch } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { CheckBox } from "@rneui/base";

@@ -24,7 +24,7 @@ const PreviewTitle = () => {
           selectTextOnFocus={false}
         />
         <View style={styles.bottomContainer}>
-          <Text style={styles.bottomText}>LOVECLASSUM@gmail.com</Text>
+          <Text style={styles.bottomText}>helloryyeong@gmail.com</Text>
         </View>
         <View style={styles.bottomContainer}>
           <Text style={styles.isNecessaryText}>* 표시는 필수 질문임</Text>
