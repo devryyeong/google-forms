@@ -38,3 +38,5 @@ $ yarn start
 ```
 
 ## 🎬 데모 영상
+https://github.com/devryyeong/google-forms/assets/68095767/8bbec6b9-ad11-4bfa-9bf4-7b5e2eaa5ad1
+
